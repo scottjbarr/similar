@@ -43,7 +43,7 @@ module Similar
     num / den.to_f
   end
 
-  def self.euclidian_distance(a, b)
+  def self.euclidean_distance(a, b)
 
     # Add up the squares of all the differences
       # sum_of_squares = sum(

@@ -23,11 +23,11 @@ describe Similar do
     lambda { Similar.pearson_score(a, b) }.should raise_exception(ArgumentError, "Arrays not of equal length")
   end
 
-  it "should calculate euclidian distance score" do
+  it "should calculate euclidean distance score" do
     a = 5.0, 5.0, 5.0, 5.0, 5.0
     b = 4.0, 4.0, 4.0, 4.0, 4.0
 
-    score = Similar.euclidian_distance(a, b)
+    score = Similar.euclidean_distance(a, b)
 
     score.should be_within(0.00001).of(0.16666666666666666)
   end
