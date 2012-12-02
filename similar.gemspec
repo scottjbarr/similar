@@ -13,7 +13,7 @@ Gem::Specification.new do |gem|
     if arbitrary sets of data.
   EOF
   gem.summary       = %q{Determine similarity of arbitrary sets of data}
-  gem.homepage      = "http://scottjbarr.com"
+  gem.homepage      = "http://github.com/scottbarr/similar"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
