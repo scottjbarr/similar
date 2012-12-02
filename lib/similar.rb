@@ -43,4 +43,22 @@ module Similar
     num / den.to_f
   end
 
+  def self.euclidian_distance(a, b)
+
+    # Add up the squares of all the differences
+      # sum_of_squares = sum(
+      #     [pow(prefs[person1][item]-prefs[person2][item],2)
+
+      #                     for item in prefs[person1] if item in prefs[person2]])
+
+      # return 1/(1+sum_of_squares)
+
+    # sum, of the squares of the differences...
+    sum = a.zip(b).map { |x, y| ( (x - y) ** 2) }.inject(:+)
+
+    1 / (1+ sum)
+    # sum_1_sq = a.inject(0) { |sum, c| sum + c ** 2 }
+    # sum_2_sq = b.inject(0) { |sum, c| sum + c ** 2 }
+  end
+
 end
