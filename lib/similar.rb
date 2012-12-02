@@ -43,6 +43,9 @@ module Similar
     num / den.to_f
   end
 
+  # Calculate the distance between two Arrays of values.
+  #
+  # Distance is inverted, so higher values are better.
   def self.euclidean_distance(a, b)
     # sum, of the squares of the differences...
     sum = a.zip(b).map { |x, y| ( (x - y) ** 2) }.inject(:+)
