@@ -3,7 +3,7 @@
 Similar is a library of functions to assist in determining the similarity
 if arbitrary sets of data.
 
-At the moment only the calcululation of pearson scores is implemented.
+At the moment only the calculation of pearson scores is implemented.
 
 ## Installation
 
