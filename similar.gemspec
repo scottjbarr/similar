@@ -14,6 +14,7 @@ Gem::Specification.new do |gem|
   EOF
   gem.summary       = %q{Determine similarity of arbitrary sets of data}
   gem.homepage      = "http://github.com/scottbarr/similar"
+  gem.license = 'MIT'
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
