@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["scottjbarr@gmail.com"]
   gem.description   = <<-EOF
     Similar is a library of functions to assist in determining the similarity
-    if arbitrary sets of data.
+    of arbitrary sets of data.
   EOF
   gem.summary       = %q{Determine similarity of arbitrary sets of data}
   gem.homepage      = "http://github.com/scottbarr/similar"
