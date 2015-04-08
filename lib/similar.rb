@@ -1,7 +1,6 @@
 require "similar/version"
 
 module Similar
-
   # Calculate the pearson score for the values in two Arrays.
   #
   # Each Array must contain the same number of elements.
@@ -51,5 +50,4 @@ module Similar
     sum = a.zip(b).map { |x, y| ( (x - y) ** 2) }.inject(:+)
     1 / (1+ sum)
   end
-
 end
