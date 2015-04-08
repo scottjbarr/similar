@@ -24,7 +24,7 @@ describe Similar do
       let(:a) { [2.5, 3.5] }
       let(:b) { [3.0] }
 
-      let(:message) { 'Arrays not of equal length' }
+      let(:message) { 'Array lengths not equal' }
 
       it { expect { subject }.to raise_exception(ArgumentError, message) }
     end

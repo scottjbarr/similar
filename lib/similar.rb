@@ -1,16 +1,16 @@
 require "similar/version"
 
+# Provide implementation of various methods for comparing arrays of data to
+# quantify similarity.
 module Similar
   # Calculate the pearson score for the values in two Arrays.
   #
   # Each Array must contain the same number of elements.
   def self.pearson_score(a, b)
-    n = a.length
+    # There is nothing to compare if either of the arrays are empty
+    return 0 if a.length + b.length == 0
 
-    # There is nothing to compare.
-    return 0 unless n > 0
-
-    raise ArgumentError.new("Arrays not of equal length") if n != b.length
+    raise ArgumentError.new('Array lengths not equal') if a.length != b.length
 
     # There is a case with pearson score, where if the two arrays
     # are exactly the same it returns 0, when really the score should be 1.0
@@ -23,17 +23,18 @@ module Similar
     return 1.0 if a == b
 
     # sum of the values
-    sum_1 = a.inject(0) { |sum, c| sum + c }
-    sum_2 = b.inject(0) { |sum, c| sum + c }
+    sum_1 = a.inject(:+)
+    sum_2 = b.inject(:+)
 
     # sum of the squares
-    sum_1_sq = a.inject(0) { |sum, c| sum + c ** 2 }
-    sum_2_sq = b.inject(0) { |sum, c| sum + c ** 2 }
+    sum_1_sq = a.map { |n| n ** 2.0 }.inject(:+)
+    sum_2_sq = b.map { |n| n ** 2.0 }.inject(:+)
 
     # sum of the product
-    prod_sum = a.zip(b).inject(0) { |sum, ab| sum + ab[0] * ab[1] }
+    prod_sum = a.zip(b).map { |ab| ab[0] * ab[1] }.inject(:+)
 
     # calculate the Pearson score
+    n = a.length
     num = prod_sum - (sum_1 * sum_2 / n)
     den = Math.sqrt((sum_1_sq - (sum_1 ** 2) / n) * (sum_2_sq - (sum_2 ** 2) / n))
 
@@ -46,8 +47,8 @@ module Similar
   #
   # Distance is inverted, so higher values are better.
   def self.euclidean_distance(a, b)
-    # sum, of the squares of the differences...
-    sum = a.zip(b).map { |x, y| ( (x - y) ** 2) }.inject(:+)
-    1 / (1+ sum)
+    # sum, of the squares of the differences
+    sum = a.zip(b).map { |x, y| ((x - y) ** 2) }.inject(:+)
+    1 / (1 + sum)
   end
 end
