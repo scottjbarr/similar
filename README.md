@@ -38,7 +38,7 @@ Or install it yourself as:
 
 ## License
 
-Copyright (c) 2012 Scott Barr
+Copyright (c) 2012, 2015 Scott Barr
 
 MIT License
 
